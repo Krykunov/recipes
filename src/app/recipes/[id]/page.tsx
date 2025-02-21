@@ -9,10 +9,12 @@ import RecipeHeader from '@/components/Recipes/RecipeHeader';
 import RecipeImage from '@/components/Recipes/RecipeImage';
 import RecipeSummary from '@/components/Recipes/RecipeSummary';
 
+type Params = Promise<{ id: string }>;
+
 export default async function RecipeDetailsPage({
   params,
 }: {
-  params: { id: string };
+  params: Params;
 }) {
   try {
     const { id } = await params;
