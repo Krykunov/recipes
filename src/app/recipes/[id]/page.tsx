@@ -1,15 +1,19 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { Suspense } from "react";
-import { notFound } from "next/navigation";
-import { Card } from "@/components/ui/card";
-import { Skeleton } from "@/components/ui/skeleton";
-import { getSingleRecipe } from "@/services/getSingleRecipe";
-import IngredientsList from "@/components/Recipes/IngredientsList";
-import RecipeHeader from "@/components/Recipes/RecipeHeader";
-import RecipeImage from "@/components/Recipes/RecipeImage";
-import RecipeSummary from "@/components/Recipes/RecipeSummary";
+import { Suspense } from 'react';
+import { notFound } from 'next/navigation';
+import { Card } from '@/components/ui/card';
+import { Skeleton } from '@/components/ui/skeleton';
+import { getSingleRecipe } from '@/services/getSingleRecipe';
+import IngredientsList from '@/components/Recipes/IngredientsList';
+import RecipeHeader from '@/components/Recipes/RecipeHeader';
+import RecipeImage from '@/components/Recipes/RecipeImage';
+import RecipeSummary from '@/components/Recipes/RecipeSummary';
 
-export default async function RecipeDetailsPage({ params }: { params: { id: string } }) {
+export default async function RecipeDetailsPage({
+  params,
+}: {
+  params: { id: string };
+}) {
   try {
     const recipe = await getSingleRecipe(params.id);
 
@@ -21,15 +25,24 @@ export default async function RecipeDetailsPage({ params }: { params: { id: stri
               <Skeleton className="h-10 w-40 mb-4" />
               <Skeleton className="h-8 w-2/3 mb-4" />
               <Skeleton className="h-6 w-48" />
+              <Skeleton className="h-6 w-48" />
             </div>
           }
         >
-          <RecipeHeader title={recipe.title} readyInMinutes={recipe.readyInMinutes} servings={recipe.servings} />
+          <RecipeHeader
+            title={recipe.title}
+            readyInMinutes={recipe.readyInMinutes}
+            servings={recipe.servings}
+          />
         </Suspense>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
-            <Suspense fallback={<Skeleton className="aspect-video w-full rounded-lg mb-6" />}>
+            <Suspense
+              fallback={
+                <Skeleton className="aspect-video w-full rounded-lg mb-6" />
+              }
+            >
               <RecipeImage src={recipe.image} alt={recipe.title} />
             </Suspense>
 
