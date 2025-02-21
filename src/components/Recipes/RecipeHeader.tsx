@@ -1,6 +1,5 @@
-import Link from "next/link";
-import { Button } from "../ui/button";
-import { ArrowLeft, Clock, Users } from "lucide-react";
+import { Clock, Users } from 'lucide-react';
+import BackButton from '../BackButton';
 
 export default function RecipeHeader({
   title,
@@ -13,12 +12,8 @@ export default function RecipeHeader({
 }) {
   return (
     <div className="mb-6">
-      <Button variant="ghost" asChild className="mb-4">
-        <Link href="/recipes" className="flex items-center gap-2">
-          <ArrowLeft className="h-4 w-4" />
-          Back to Recipes
-        </Link>
-      </Button>
+      <BackButton text="Back to form" />
+      <BackButton path="/recipes" text="Back to recipes" />
 
       <h1 className="text-3xl font-bold mb-4">{title}</h1>
 

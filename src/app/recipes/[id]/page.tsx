@@ -15,7 +15,8 @@ export default async function RecipeDetailsPage({
   params: { id: string };
 }) {
   try {
-    const recipe = await getSingleRecipe(params.id);
+    const { id } = await params;
+    const recipe = await getSingleRecipe(id);
 
     return (
       <div className="container mx-auto py-8 px-4">
