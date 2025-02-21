@@ -1,5 +1,10 @@
 # Recipes fetching app
 
+[Demo Link](https://recipes-lemon-eight.vercel.app/)
+
+Allows to input name of recipe or ingredient, cuisine origin and max cooking time.
+Shows list of recipes and provides details of selected recipe on separate page
+
 ## 🏗 Setup & Installation
 
 ### 🔧 Prerequisites
