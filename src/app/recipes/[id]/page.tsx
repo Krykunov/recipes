@@ -25,7 +25,6 @@ export default async function RecipeDetailsPage({
               <Skeleton className="h-10 w-40 mb-4" />
               <Skeleton className="h-8 w-2/3 mb-4" />
               <Skeleton className="h-6 w-48" />
-              <Skeleton className="h-6 w-48" />
             </div>
           }
         >
